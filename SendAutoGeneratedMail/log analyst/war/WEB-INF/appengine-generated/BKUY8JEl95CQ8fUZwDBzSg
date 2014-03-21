@@ -1,0 +1,78 @@
+=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/nsn/jboss-portal-2.7.2
+
+  JAVA: /usr/jdk1.5.0_22/bin/java
+
+  JAVA_OPTS: -Duser.timezone=WET -Dprogram.name=run.sh -server -Xms512m -Xmx2048m -XX:MaxPermSize=256m -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djava.net.preferIPv4Stack=true -Dorg.apache.cxf.Logger=org.apache.cxf.common.logging.Log4jLogger
+
+  CLASSPATH: /opt/nsn/jboss-portal-2.7.2/bin/run.jar:/usr/jdk1.5.0_22/lib/tools.jar
+
+=========================================================================
+
+07:58:49,351 INFO  [Server] Starting JBoss (MX MicroKernel)...
+07:58:49,351 INFO  [Server] Release ID: JBoss [Trinity] 4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)
+07:58:49,352 INFO  [Server] Home Dir: /opt/nsn/jboss-portal-2.7.2
+07:58:49,353 INFO  [Server] Home URL: file:/opt/nsn/jboss-portal-2.7.2/
+07:59:06,262 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=SubscriptionMassiveBWS
+07:59:06,262 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=TPALogoutWS
+07:59:06,263 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=AddMSISDNInFleet
+07:59:06,264 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=SubscriptionWs
+07:59:06,264 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=LoginAuthenticateWs
+07:59:06,265 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=AjaxCallWs
+07:59:06,265 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=UserHistoryWs
+07:59:06,266 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=TopUpAccBuss
+07:59:06,266 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=SearchMSISDNFleet
+07:59:06,267 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=SubscriptionConfigureUpdate
+07:59:06,268 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=ConfigureSubscriptionWS
+07:59:06,268 INFO  [DefaultEndpointRegistry] register: jboss.ws:context=MarocWebServices,endpoint=SubscriptionMassiveWS
+07:59:06,310 INFO  [DefaultWebAppDesciptorModifierImpl] Ignore servlet: com.morac.cc.logging.Log4jInitServlet
+07:59:06,328 INFO  [TomcatDeployer] deploy, ctxPath=/MarocWebServices, warUrl=.../deploy/MarocWebServices.war/
+07:59:06,408 ERROR [STDERR] log4j:ERROR A "org.jboss.logging.appender.FileAppender" object is not assignable to a "org.apache.log4j.Appender" variable.
+07:59:06,408 ERROR [STDERR] log4j:ERROR The class "org.apache.log4j.Appender" was loaded by 
+07:59:06,408 ERROR [STDERR] log4j:ERROR [WebappClassLoader
+  delegate: false
+  repositories:
+    /WEB-INF/classes/
+----------> Parent Classloader:
+java.net.FactoryURLClassLoader@67a88328
+] whereas object of type 
+15:54:27,931 ERROR [SOAPFaultHelperJAXWS] SOAP request exception
+com.morac.cc.common.exception.MccException: 000-00103
+	at com.morac.cc.customeraccmgmt.integration.CustomeAccountMgmtServiceHandler.getCustomerAccount(CustomeAccountMgmtServiceHandler.java:108)
+	at com.morac.cc.customeraccmgmt.bo.CustomerAccountBOImpl.connect(CustomerAccountBOImpl.java:52)
+	at com.morac.cc.customeraccmgmt.webservice.ViewCustomerAccountMgmtWS.connect(ViewCustomerAccountMgmtWS.java:34)
+	at sun.reflect.GeneratedMethodAccessor115.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:592)
+	at org.jboss.wsf.container.jboss42.InvocationHandlerJSE.invoke(InvocationHandlerJSE.java:102)
+	at org.jboss.ws.core.server.ServiceEndpointInvoker.invoke(ServiceEndpointInvoker.java:221)
+	at org.jboss.wsf.stack.jbws.RequestHandlerImpl.processRequest(RequestHandlerImpl.java:466)
+	at org.jboss.wsf.stack.jbws.RequestHandlerImpl.handleRequest(RequestHandlerImpl.java:284)
+	at org.jboss.wsf.stack.jbws.RequestHandlerImpl.doPost(RequestHandlerImpl.java:201)
+	at org.jboss.wsf.stack.jbws.RequestHandlerImpl.handleHttpRequest(RequestHandlerImpl.java:134)
+	at org.jboss.wsf.stack.jbws.EndpointServlet.service(EndpointServlet.java:84)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:230)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.jboss.web.tomcat.security.SecurityAssociationValve.invoke(SecurityAssociationValve.java:182)
+	at org.jboss.web.tomcat.security.JaccContextValve.invoke(JaccContextValve.java:84)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.jboss.web.tomcat.service.jca.CachedConnectionValve.invoke(CachedConnectionValve.java:157)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:562)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:262)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:446)
+	at java.lang.Thread.run(Thread.java:595)
+15:54:36,370 INFO  [STDOUT]  IN MW DBUtil 
+15:54:36,371 INFO  [STDOUT]  IN MW DBUtil Clearing Alarm 
