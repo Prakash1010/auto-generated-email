@@ -1,0 +1,2 @@
+serviceClass: edu.loganalyst.client.UploadService
+path: B87E97E143D09F2041ABE5E0FDEC735A.gwt.rpc

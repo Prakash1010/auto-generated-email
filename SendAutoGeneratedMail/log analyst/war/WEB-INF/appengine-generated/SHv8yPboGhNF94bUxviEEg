@@ -1,0 +1,114 @@
+=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/nsn/jboss-portal-2.7.2
+
+  JAVA: /usr/jdk1.5.0_22/bin/java
+
+  JAVA_OPTS: -Duser.timezone=WET -Dprogram.name=run.sh -server -Xms512m -Xmx2048m -XX:MaxPermSize=256m -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djava.net.preferIPv4Stack=true -Dorg.apache.cxf.Logger=org.apache.cxf.common.logging.Log4jLogger
+
+  CLASSPATH: /opt/nsn/jboss-portal-2.7.2/bin/run.jar:/usr/jdk1.5.0_22/lib/tools.jar
+
+=========================================================================
+
+07:58:49,351 INFO  [Server] Starting JBoss (MX MicroKernel)...
+07:58:49,351 INFO  [Server] Release ID: JBoss [Trinity] 4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)
+07:58:49,352 INFO  [Server] Home Dir: /opt/nsn/jboss-portal-2.7.2
+07:58:49,353 INFO  [Server] Home URL: file:/opt/nsn/jboss-portal-2.7.2/
+07:58:49,353 INFO  [Server] Patch URL: null
+07:58:49,353 INFO  [Server] Server Name:    
+07:58:49,353 INFO  [Server] Server Home Dir: /opt/nsn/jboss-portal-2.7.2/server/   
+07:58:49,354 INFO  [Server] Server Home URL: file:/opt/nsn/jboss-portal-2.7.2/server/   /
+07:58:49,354 INFO  [Server] Server Log Dir: /opt/nsn/jboss-portal-2.7.2/server/   /log
+07:58:49,354 INFO  [Server] Server Temp Dir: /opt/nsn/jboss-portal-2.7.2/server/   /tmp
+07:58:49,354 INFO  [Server] Root Deployment Filename: jboss-service.xml
+07:58:49,575 INFO  [ServerInfo] Java version: 1.5.0_22,Sun Microsystems Inc.
+07:58:49,575 INFO  [ServerInfo] Java VM: Java HotSpot(TM) 64-Bit Server VM 1.5.0_22-b03,Sun Microsystems Inc.
+07:58:49,576 INFO  [ServerInfo] OS-System: Linux 2.6.18-194.el5,amd64
+07:58:49,815 INFO  [Server] Core system initialized
+07:58:51,184 INFO  [WebService] Using RMI server codebase: http://MCC-BL3:8083/
+07:58:51,185 INFO  [Log4jService$URLWatchTimerTask] Configuring from URL: resource:jboss-log4j.xml
+07:58:51,453 INFO  [TransactionManagerService] JBossTS Transaction Service (JTA version) - JBoss Inc.
+07:58:51,454 INFO  [TransactionManagerService] Setting up property manager MBean and JMX layer
+07:58:51,595 INFO  [TransactionManagerService] Starting recovery manager
+07:58:51,645 INFO  [TransactionManagerService] Recovery manager started
+07:58:51,645 INFO  [TransactionManagerService] Binding TransactionManager JNDI Reference
+07:58:52,817 INFO  [EJB3Deployer] Starting java:comp multiplexer
+07:58:53,311 INFO  [STDOUT] 
+-------------------------------------------------------
+GMS: address is 127.0.0.1:47295
+-------------------------------------------------------
+07:58:55,327 INFO  [TreeCache] viewAccepted(): [127.0.0.1:47295|0] [127.0.0.1:47295]
+07:58:55,344 INFO  [TreeCache] TreeCache local address is 127.0.0.1:47295
+07:58:55,344 INFO  [TreeCache] State could not be retrieved (we are the first member in group)
+07:58:55,344 INFO  [TreeCache] parseConfig(): PojoCacheConfig is empty
+07:58:56,307 INFO  [NativeServerConfig] JBoss Web Services - Native
+07:58:56,307 INFO  [NativeServerConfig] jbossws-3.0.1-native-2.0.4.GA (build=200803312044)
+07:58:56,676 INFO  [SnmpAgentService] SNMP agent going active
+07:58:56,865 INFO  [DefaultPartition] Initializing
+07:58:56,887 INFO  [STDOUT] 
+-------------------------------------------------------
+GMS: address is 127.0.0.1:40633
+-------------------------------------------------------
+07:58:58,892 INFO  [DefaultPartition] Number of cluster members: 1
+07:58:58,893 INFO  [DefaultPartition] Other members: 0
+07:58:58,893 INFO  [DefaultPartition] Fetching state (will wait for 30000 milliseconds):
+07:58:58,893 INFO  [DefaultPartition] State could not be retrieved (we are the first member in group)
+07:58:58,922 INFO  [HANamingService] Started ha-jndi bootstrap jnpPort=1100, backlog=50, bindAddress=/0.0.0.0
+07:58:58,939 INFO  [DetachedHANamingService$AutomaticDiscovery] Listening on /0.0.0.0:1102, group=230.0.0.4, HA-JNDI address=127.0.0.1:1100
+07:58:59,261 INFO  [TreeCache] No transaction manager lookup class has been defined. Transactions cannot be used
+07:58:59,315 INFO  [STDOUT] 
+-------------------------------------------------------
+GMS: address is 127.0.0.1:46081
+-------------------------------------------------------
+07:59:01,318 INFO  [TreeCache] viewAccepted(): [127.0.0.1:46081|0] [127.0.0.1:46081]
+07:59:01,319 INFO  [TreeCache] TreeCache local address is 127.0.0.1:46081
+07:59:01,403 INFO  [STDOUT] 
+-------------------------------------------------------
+GMS: address is 127.0.0.1:41360
+-------------------------------------------------------
+07:59:03,406 INFO  [TreeCache] viewAccepted(): [127.0.0.1:41360|0] [127.0.0.1:41360]
+07:59:03,407 INFO  [TreeCache] TreeCache local address is 127.0.0.1:41360
+07:59:03,691 INFO  [CorbaNamingService] Naming: [IOR:000000000000002B49444C3A6F6D672E6F72672F436F734E616D696E672F4E616D696E67436F6E746578744578743A312E3000000000000200000000000000F0000102000000000A3132372E302E302E31000DC8000000114A426F73732F4E616D696E672F726F6F74000000000000050000000000000008000000004A414300000000010000001C00000000050100010000000105010001000101090000000105010001000000210000006C000000000000000100000000000000240000001C0000007E00000000000000010000000A3132372E302E302E31000DC900400000000000080606678102010101000000170401000806066781020101010000000764656661756C7400000000000000000000000000000000000000002000000004000000000000001F0000000400000003000000010000002000000000000000020000002000000004000000000000001F0000000400000003]
+07:59:03,747 INFO  [CorbaTransactionService] TransactionFactory: [IOR:000000000000003049444C3A6F72672F6A626F73732F746D2F69696F702F5472616E73616374696F6E466163746F72794578743A312E30000000000200000000000000F0000102000000000A3132372E302E302E31000DC8000000144A426F73732F5472616E73616374696F6E732F46000000050000000000000008000000004A414300000000010000001C00000000050100010000000105010001000101090000000105010001000000210000006C000000000000000100000000000000240000001C0000007E00000000000000010000000A3132372E302E302E31000DC900400000000000080606678102010101000000170401000806066781020101010000000764656661756C7400000000000000000000000000000000000000002000000004000000000000001F0000000400000003000000010000002000000000000000020000002000000004000000000000001F0000000400000003]
+07:59:04,021 INFO  [Embedded] Catalina naming disabled
+07:59:04,095 INFO  [AprLifecycleListener] The Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/jdk1.5.0_22/jre/lib/amd64/server:/usr/jdk1.5.0_22/jre/lib/amd64:/usr/jdk1.5.0_22/jre/../lib/amd64
+07:59:04,131 INFO  [Http11Protocol] Initializing Coyote HTTP/1.1 on http-0.0.0.0-  
+07:59:04,131 INFO  [AjpProtocol] Initializing Coyote AJP/1.3 on ajp-0.0.0.0-8009
+07:59:04,131 INFO  [Catalina] Initialization processed in 109 ms
+07:59:04,131 INFO  [StandardService] Starting service jboss.web
+07:59:04,132 INFO  [StandardEngine] Starting Servlet Engine: JBossWeb/2.0.1.GA
+07:59:04,156 INFO  [Catalina] Server startup in 25 ms
+07:59:04,205 INFO  [TomcatDeployer] deploy, ctxPath=/, warUrl=.../deploy/jboss-web.deployer/ROOT.war/
+07:59:04,478 INFO  [TomcatDeployer] deploy, ctxPath=/invoker, warUrl=.../deploy/httpha-invoker.sar/invoker.war/
+07:59:04,544 INFO  [TomcatDeployer] deploy, ctxPath=/jbossws, warUrl=.../deploy/jbossws.sar/jbossws-context.war/
+07:59:04,588 INFO  [TomcatDeployer] deploy, ctxPath=/juddi, warUrl=.../deploy/juddi-service.sar/juddi.war/
+07:59:04,627 INFO  [RegistryServlet] Loading jUDDI configuration.
+07:59:04,627 INFO  [RegistryServlet] Resources loaded from: /WEB-INF/juddi.properties
+07:59:04,627 INFO  [RegistryServlet] Initializing jUDDI components.
+07:59:04,769 INFO  [TomcatDeployer] deploy, ctxPath=/jbossmq-httpil, warUrl=.../deploy-hasingleton/jms/jbossmq-httpil.sar/jbossmq-httpil.war/
+07:59:04,857 INFO  [TomcatDeployer] deploy, ctxPath=/web-console, warUrl=.../deploy/management/console-mgr.sar/web-console.war/
+07:59:05,037 INFO  [MailService] Mail Service bound to java:/Mail
+07:59:05,054 INFO  [SystemPropertiesService] Loaded system properties from: file:/opt/nsn/jboss-portal-2.7.2/server/   /conf/MAROC-CC-CONF/Alarm.properties
+07:59:05,054 INFO  [SystemPropertiesService] Loaded system properties from: file:/opt/nsn/jboss-portal-2.7.2/server/   /conf/MAROC-CC-CONF/Reports.properties
+07:59:05,054 INFO  [SystemPropertiesService] Loaded system properties from: file:/opt/nsn/jboss-portal-2.7.2/server/   /conf/MAROC-CC-CONF/BusinessConfiguration.properties
+07:59:05,055 INFO  [SystemPropertiesService] Loaded system properties from: file:/opt/nsn/jboss-portal-2.7.2/server/   /conf/MAROC-CC-CONF/TPAErrorCodes.properties
+07:59:05,090 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-ha-local-jdbc.rar
+07:59:05,105 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-ha-xa-jdbc.rar
+07:59:05,115 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-local-jdbc.rar
+07:59:05,127 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-xa-jdbc.rar
+07:59:05,155 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jms/jms-ra.rar
+07:59:05,166 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/mail-ra.rar
+07:59:05,181 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/quartz-ra.rar
+07:59:05,185 INFO  [QuartzResourceAdapter] start quartz!!!
+07:59:05,213 INFO  [SimpleThreadPool] Job execution threads will use class loader of thread: main
+07:59:05,224 INFO  [QuartzScheduler] Quartz Scheduler v.1.5.2 created.
+07:59:05,225 INFO  [RAMJobStore] RAMJobStore initialized.
+07:59:05,225 INFO  [StdSchedulerFactory] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+07:59:05,225 INFO  [StdSchedulerFactory] Quartz scheduler version: 1.5.2
+07:59:05,225 INFO  [QuartzScheduler] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+07:59:05,721 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=DefaultDS' to JNDI name 'java:DefaultDS'
+07:59:05,916 INFO  [A] Bound to JNDI name: queue/A
+07:59:05,917 INFO  [B] Bound to JNDI name: queue/B
+07:59:05,919 INFO  [C] Bound to JNDI name: queue/C
