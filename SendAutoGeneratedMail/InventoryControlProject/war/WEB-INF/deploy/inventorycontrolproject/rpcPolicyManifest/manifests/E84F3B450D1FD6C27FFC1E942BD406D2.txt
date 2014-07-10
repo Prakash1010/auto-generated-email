@@ -1,0 +1,2 @@
+serviceClass: com.edu.inventorycontrol.client.InventoryStockService
+path: 6CFF528A087CEE3D932D39742C0FFC9A.gwt.rpc

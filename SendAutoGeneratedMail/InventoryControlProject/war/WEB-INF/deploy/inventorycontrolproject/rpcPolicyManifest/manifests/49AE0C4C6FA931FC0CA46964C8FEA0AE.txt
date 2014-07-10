@@ -1,0 +1,2 @@
+serviceClass: com.edu.inventorycontrol.client.DisplayProductService
+path: EB50AFC7B6B5BFFB650B18A068C8B81F.gwt.rpc
