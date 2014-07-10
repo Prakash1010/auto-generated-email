@@ -1,6 +1,9 @@
 package com.edu.inventorycontrol.client.view;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.edu.inventorycontrol.client.InventoryStockServiceClientImpl;
 import com.edu.inventorycontrol.client.ProductServiceClientImpl;
@@ -26,7 +29,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.user.datepicker.client.DateBox;
 
 public class EnterStock extends Composite {
-	private int count = 0;
+	public Map<String, Product>  productMap;
+	
 	private static EnterStockUiBinder uiBinder = GWT
 			.create(EnterStockUiBinder.class);
 
@@ -39,10 +43,10 @@ public class EnterStock extends Composite {
 				"product", this);
 		getProductList.getProductList();
 		InventoryStockServiceClientImpl enterStock = new InventoryStockServiceClientImpl("inventorystock", this);
-		enterStock.enterStockt(null);
+		enterStock.addStock(null);
 	}
 
-	public void addTableDisplay(List<Product> productList) {
+	public void addTableDisplay(Map<String, Product> productMap) {
 
 		// Create a DateBox
 		DateTimeFormat dateFormat = DateTimeFormat.getFormat("MM/dd/yyyy");
@@ -53,17 +57,30 @@ public class EnterStock extends Composite {
 		HorizontalPanel datePanel = new HorizontalPanel();
 		datePanel.add(selectLabel);
 		datePanel.add(dateBox);
+		List<Product> productList = new ArrayList<Product>();
+		for (Entry<String, Product> entry : productMap.entrySet())
+		{
+		    productList.add(entry.getValue());
+		}
+		FlexTable flexTable = createFlexTable(productList);
+		VerticalPanel hp = new VerticalPanel();
+		hp.add(datePanel);
+		hp.add(flexTable);
+		RootPanel.get("body").add(hp);
+	}
 
+	private FlexTable createFlexTable(List<Product> productList) {
 		final FlexTable flexTable = new FlexTable();
 		flexTable.setBorderWidth(1);
 		// Set table headers
 		flexTable.setText(0, 0, "Product Name");
 		flexTable.setText(0, 1, "Product ID");
 		flexTable.setText(0, 2, "Add Stock");
+		int count = 0;	
 		for (Product product : productList) {
 			count++;
-			flexTable.setText(count, 0, product.getProductId());
-			flexTable.setText(count, 1, product.getProductName());
+			flexTable.setText(count, 0, product.getProductName());
+			flexTable.setText(count, 1, product.getProductId());
 			flexTable.setText(count, 2, "");
 
 			flexTable.addClickHandler(new ClickHandler() {
@@ -99,11 +116,7 @@ public class EnterStock extends Composite {
 					textBox.setFocus(true);
 				}
 			});
-
 		}
-		VerticalPanel hp = new VerticalPanel();
-		hp.add(datePanel);
-		hp.add(flexTable);
-		RootPanel.get("body").add(hp);
+		return null;
 	}
 }

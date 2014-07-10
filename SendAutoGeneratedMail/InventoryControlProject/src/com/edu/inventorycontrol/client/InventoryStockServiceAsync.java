@@ -10,7 +10,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
  */
 public interface InventoryStockServiceAsync {
 	
-	void enterStock(List<InventoryStockItem> stock,
+	void addStock(List<InventoryStockItem> stock,
 			AsyncCallback<Boolean> callback);	
 	void displayStock(AsyncCallback<List<InventoryStockItem>> callback);
 	
