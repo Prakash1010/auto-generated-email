@@ -1,6 +1,10 @@
 package com.edu.inventorycontrol.client.view;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.edu.inventorycontrol.client.ProductServiceClientImpl;
 import com.edu.inventorycontrol.shared.Product;
@@ -27,7 +31,7 @@ public class DisplayProduct extends Composite {
 
 	}
 
-	public void addTableDisplay(List<Product> productList) {
+	public void addTableDisplay(Map<String, Product> productMap) {
 		final FlexTable flexTable = new FlexTable();
 		flexTable.setBorderWidth(1);
 		// Set table headers
@@ -36,10 +40,17 @@ public class DisplayProduct extends Composite {
 		flexTable.setText(0, 2, "Price");
 		flexTable.setText(0, 3, "Percentage");
 		int count = 0;
+
+		List<Product> productList = new ArrayList<Product>();
+		for (Entry<String, Product> entry : productMap.entrySet())
+		{
+		    productList.add(entry.getValue());
+		}
+		
 		for (Product product : productList) {
 			count++;
-			flexTable.setText(count, 0, product.getProductId());
-			flexTable.setText(count, 1, product.getProductName());
+			flexTable.setText(count, 0, product.getProductName());
+			flexTable.setText(count, 1, product.getProductId());
 			flexTable.setText(count, 2, product.getPrice() + "");
 			flexTable.setText(count, 3, product.getPercentage() + "");
 		}

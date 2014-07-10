@@ -11,6 +11,6 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  */
 @RemoteServiceRelativePath("inventorystock")
 public interface InventoryStockService extends RemoteService {
-	boolean enterStock(List<InventoryStockItem> stock);
 	List<InventoryStockItem> displayStock();
+	boolean addStock(List<InventoryStockItem> stock);
 }

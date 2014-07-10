@@ -14,33 +14,50 @@ public class InventoryStockServiceClientImpl {
 	private InventoryStockServiceAsync service;
 	private EnterStock enterStock;
 
-	public InventoryStockServiceClientImpl(String url_locationofservlet, Object callingClass) {
+	public InventoryStockServiceClientImpl(String url_locationofservlet,
+			Object callingClass) {
 		this.service = GWT.create(InventoryStockService.class);
 		ServiceDefTarget endPoint = (ServiceDefTarget) this.service;
 		endPoint.setServiceEntryPoint(url_locationofservlet);
 		this.enterStock = (EnterStock) callingClass;
 	}
 
-	public void enterStockt(List<InventoryStockItem> inventoryStockItems) {
-		this.service.enterStock(inventoryStockItems, new DefaultCallBack());
+	public void addStock(List<InventoryStockItem> inventoryStockItems) {
+		this.service.addStock(inventoryStockItems, new AddStockCallBack());
 	}
 
-	private class DefaultCallBack implements AsyncCallback<Boolean> {
+	public void displayStock() {
+		this.service.displayStock(new DisplayStockCallBack());
+	}
+
+	private class DisplayStockCallBack implements
+			AsyncCallback<List<InventoryStockItem>> {
 
 		@Override
 		public void onFailure(Throwable caught) {
-			Window.alert("Failure");		
+			// TODO Auto-generated method stub
+
 		}
 
+		@Override
+		public void onSuccess(List<InventoryStockItem> result) {
+			// TODO Auto-generated method stub
+
+		}
+
+	}
+
+	private class AddStockCallBack implements AsyncCallback<Boolean> {
+
+		@Override
+		public void onFailure(Throwable caught) {
+			Window.alert("Failure in inventory client impl");
+		}
 
 		@Override
 		public void onSuccess(Boolean result) {
-			Window.alert("Success");		
+			Window.alert("Success in inventory client impl");
 		}
 
-		
-		
-
-		
 	}
 }

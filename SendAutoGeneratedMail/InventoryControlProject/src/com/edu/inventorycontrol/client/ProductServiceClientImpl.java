@@ -1,6 +1,7 @@
 package com.edu.inventorycontrol.client;
 
 import java.util.List;
+import java.util.Map;
 
 import com.edu.inventorycontrol.client.view.DisplayProduct;
 import com.edu.inventorycontrol.client.view.EnterStock;
@@ -36,21 +37,22 @@ public class ProductServiceClientImpl {
 		this.service.getProductList(new DefaultCallBack());
 	}
 
-	private class DefaultCallBack implements AsyncCallback<List<Product>> {
+	private class DefaultCallBack implements AsyncCallback<Map<String, Product>> {
 
 		@Override
 		public void onFailure(Throwable caught) {
-			Window.alert("Failure");
+			Window.alert("Failure in display product");
 
 		}
 
 		@Override
-		public void onSuccess(List<Product> result) {
+		public void onSuccess(Map<String, Product> productMap) {
+			Window.alert("SUCCESS "+productMap+"");
 			if (displayProduct != null) {
-				displayProduct.addTableDisplay(result);
+				displayProduct.addTableDisplay(productMap);
 			}
 			else if(enterStock != null){
-				enterStock.addTableDisplay(result);
+				enterStock.productMap = productMap;
 			}
 		}
 
