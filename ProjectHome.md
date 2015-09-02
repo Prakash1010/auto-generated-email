@@ -1,0 +1,1 @@
+it sends auto mail
